@@ -267,3 +267,4 @@ export default function HomePage() {
     </div>
   );
 }
+// Atualizado em 2026
