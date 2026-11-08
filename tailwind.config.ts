@@ -9,7 +9,7 @@ const config: Config = {
     extend: {
       colors: {
         pixel: {
-          bg: '#0c0714',         // Fundo principal ultra escuro
+          bg: '#0c0714',         // Fundo escuro profundo
           card: '#160d29',       // Fundo dos cards (roxo profundo)
           purple: '#8b5cf6',     // Roxo vibrante (principal)
           'purple-dark': '#6d28d9',
