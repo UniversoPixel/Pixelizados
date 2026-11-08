@@ -3,18 +3,46 @@
 @tailwind utilities;
 
 body {
-  background-color: #0c0714;
-  color: #f4f4f5;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-.retro-shadow {
-  box-shadow: 3px 3px 0px #000000;
+.retro-card {
+  background-color: #ffffff;
+  border: 2px solid #0f172a;
+  border-radius: 1.25rem; /* rounded-2xl */
+  box-shadow: 4px 4px 0px #0f172a;
 }
 
-.retro-shadow-sm {
-  box-shadow: 2px 2px 0px #000000;
+.retro-btn-yellow {
+  background-color: #facc15;
+  color: #0f172a;
+  font-weight: 800;
+  border: 2px solid #0f172a;
+  border-radius: 9999px; /* Pill / totalmente arredondado */
+  box-shadow: 3px 3px 0px #0f172a;
+  transition: all 0.15s ease-in-out;
 }
 
-.retro-shadow-lg {
-  box-shadow: 5px 5px 0px #000000;
+.retro-btn-yellow:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px #0f172a;
+  background-color: #eab308;
+}
+
+.retro-btn-blue {
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 800;
+  border: 2px solid #0f172a;
+  border-radius: 9999px;
+  box-shadow: 3px 3px 0px #0f172a;
+  transition: all 0.15s ease-in-out;
+}
+
+.retro-btn-blue:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0px #0f172a;
+  background-color: #1d4ed8;
 }
