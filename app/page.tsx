@@ -13,7 +13,6 @@ import {
   MessageSquare
 } from 'lucide-react';
 
-// Mocks de dados iniciais (serão substituídos por banco de dados/API)
 const TOP_SERVIDORES = [
   {
     id: '1',
@@ -76,8 +75,7 @@ export default function HomePage() {
         <Header />
 
         <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
-          
-          {/* HERO BANNER - CHAMADA PRINCIPAL */}
+          {/* HERO BANNER */}
           <section className="relative rounded-xl border-4 border-black bg-gradient-to-r from-pixel-purple-dark via-pixel-card to-pixel-blue-dark p-6 sm:p-10 retro-shadow-lg overflow-hidden">
             <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-pixel-cyan/10 rounded-full blur-3xl pointer-events-none" />
             
@@ -192,8 +190,6 @@ export default function HomePage() {
 
           {/* SEÇÃO DUPLA: NOTÍCIAS & WIDGET RÁDIO */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-            
-            {/* COLUNA ESQUERDA: NOTÍCIAS */}
             <section className="lg:col-span-8 space-y-6">
               <div className="flex items-center justify-between border-b-2 border-zinc-800 pb-3">
                 <div className="flex items-center gap-3">
@@ -238,7 +234,6 @@ export default function HomePage() {
               </div>
             </section>
 
-            {/* COLUNA DIREITA: WIDGET DE RÁDIO */}
             <aside className="lg:col-span-4 space-y-6">
               <div className="bg-pixel-card border-2 border-black rounded-lg p-5 retro-shadow space-y-4">
                 <div className="flex items-center gap-3 border-b border-zinc-800 pb-3">
@@ -264,9 +259,7 @@ export default function HomePage() {
                 </div>
               </div>
             </aside>
-
           </div>
-
         </main>
       </div>
 
