@@ -1,81 +1,81 @@
 import Link from 'next/link';
-import { Sparkles, Trophy, Newspaper, Users, Radio, Disc } from 'lucide-react';
+import { Radio, Compass, Newspaper, Users, ShieldAlert, ArrowUpRight } from 'lucide-react';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b-2 border-pixel-dark">
-      {/* Top Banner de Alerta */}
-      <div className="bg-pixel-yellow text-pixel-dark font-extrabold text-xs py-2 px-4 border-b-2 border-pixel-dark flex items-center justify-center gap-2">
-        <Sparkles className="w-4 h-4 fill-pixel-dark" />
-        <span>VOTE NO SEU HABBO PIRATA FAVORITO E GANHE DESTAQUE NO RANKING!</span>
-        <Sparkles className="w-4 h-4 fill-pixel-dark" />
+    <header className="sticky top-0 z-50 bg-[#07050d]/80 backdrop-blur-xl border-b border-white/[0.06]">
+      {/* Alerta Editorial Superior */}
+      <div className="bg-gradient-to-r from-purple-950/60 via-sky-950/60 to-purple-950/60 border-b border-white/[0.06] text-slate-300 font-mono text-[11px] tracking-widest uppercase py-2 px-4 text-center flex items-center justify-center gap-3">
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+        <span>Temporada 04 • Rankings auditados e votação aberta para o ecossistema Habbo</span>
+        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 bg-pixel-blue text-white rounded-2xl border-2 border-pixel-dark flex items-center justify-center font-black text-2xl shadow-[3px_3px_0px_#0f172a] group-hover:rotate-6 transition-transform">
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        {/* Logotipo Assinado */}
+        <Link href="/" className="group flex items-center gap-3.5">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-400 to-purple-600 p-[1px] shadow-glow-neon group-hover:scale-105 transition-transform">
+            <div className="w-full h-full bg-[#07050d] rounded-[11px] flex items-center justify-center font-black text-white text-lg tracking-tighter">
               P
             </div>
-            <div>
-              <span className="text-2xl font-black text-pixel-dark tracking-tight uppercase block leading-none">
-                Pixelizados
-              </span>
-              <span className="text-[10px] font-mono text-pixel-blue font-bold tracking-widest uppercase">
-                Comunidade & Ranking
-              </span>
-            </div>
-          </Link>
-
-          {/* Navegação Principal */}
-          <nav className="hidden md:flex items-center gap-2 bg-slate-100 p-1.5 rounded-full border-2 border-pixel-dark">
-            <Link
-              href="/"
-              className="px-4 py-2 rounded-full text-xs font-bold text-white bg-pixel-blue border border-pixel-dark shadow-[2px_2px_0px_#0f172a]"
-            >
-              Início
-            </Link>
-            <Link
-              href="/servidores"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-pixel-dark hover:bg-white transition-all"
-            >
-              <Trophy className="w-4 h-4 text-pixel-blue" />
-              Top Habbos
-            </Link>
-            <Link
-              href="/noticias"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-pixel-dark hover:bg-white transition-all"
-            >
-              <Newspaper className="w-4 h-4 text-pixel-blue" />
-              Notícias
-            </Link>
-            <Link
-              href="/membros"
-              className="flex items-center gap-1.5 px-4 py-2 rounded-full text-xs font-bold text-pixel-dark hover:bg-white transition-all"
-            >
-              <Users className="w-4 h-4 text-pixel-blue" />
-              Membros
-            </Link>
-          </nav>
-
-          {/* Botões de Ação */}
-          <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-2 bg-pixel-yellow text-pixel-dark text-xs font-black px-3 py-1.5 rounded-full border-2 border-pixel-dark shadow-[2px_2px_0px_#0f172a]">
-              <Radio className="w-4 h-4 animate-pulse" />
-              <span>Rádio ON</span>
-            </div>
-
-            <a
-              href="https://discord.gg"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="retro-btn-yellow px-5 py-2.5 text-xs flex items-center gap-2"
-            >
-              <Disc className="w-4 h-4" />
-              Entrar no Discord
-            </a>
           </div>
+          <div>
+            <span className="text-white font-black tracking-wider text-base uppercase block leading-none">
+              Pixelizados
+            </span>
+            <span className="text-[10px] font-mono text-sky-400 tracking-widest uppercase opacity-80">
+              Network Intelligence
+            </span>
+          </div>
+        </Link>
+
+        {/* Navegação Principal Autoral */}
+        <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] border border-white/[0.06] p-1.5 rounded-full backdrop-blur-md">
+          <Link
+            href="/"
+            className="px-5 py-2 rounded-full text-xs font-semibold text-white bg-white/[0.08] border border-white/10 shadow-sm transition-all"
+          >
+            Terminal
+          </Link>
+          <Link
+            href="/servidores"
+            className="px-5 py-2 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/[0.04] transition-all flex items-center gap-1.5"
+          >
+            <Compass className="w-3.5 h-3.5 text-sky-400" />
+            Rankings
+          </Link>
+          <Link
+            href="/noticias"
+            className="px-5 py-2 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/[0.04] transition-all flex items-center gap-1.5"
+          >
+            <Newspaper className="w-3.5 h-3.5 text-purple-400" />
+            Editorial
+          </Link>
+          <Link
+            href="/membros"
+            className="px-5 py-2 rounded-full text-xs font-medium text-slate-400 hover:text-white hover:bg-white/[0.04] transition-all flex items-center gap-1.5"
+          >
+            <Users className="w-3.5 h-3.5 text-amber-400" />
+            Comunidade
+          </Link>
+        </nav>
+
+        {/* Ações e Status da Rádio */}
+        <div className="flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.03] border border-white/[0.06] font-mono text-[11px] text-slate-300">
+            <Radio className="w-3.5 h-3.5 text-amber-400 animate-pulse" />
+            <span>Rádio: <strong className="text-white font-bold">OFFLINE</strong></span>
+          </div>
+
+          <a
+            href="https://discord.gg"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs px-5 py-2.5 rounded-full shadow-glow-neon transition-all hover:scale-[1.02]"
+          >
+            <span>Discord Core</span>
+            <ArrowUpRight className="w-3.5 h-3.5 stroke-[2.5]" />
+          </a>
         </div>
       </div>
     </header>
