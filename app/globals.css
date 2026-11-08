@@ -1,19 +1,10 @@
-@import "tailwindcss";
-
-:root {
-  --pixel-bg: #0c0714;
-  --pixel-card: #160d29;
-  --pixel-purple: #8b5cf6;
-  --pixel-blue: #3b82f6;
-  --pixel-cyan: #06b6d4;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
-  background-color: var(--pixel-bg);
+  background-color: #0c0714;
   color: #f4f4f5;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  min-height: 100vh;
-  margin: 0;
 }
 
 .retro-shadow {
