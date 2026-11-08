@@ -10,7 +10,8 @@ import {
   ArrowRight, 
   ThumbsUp,
   Radio,
-  MessageSquare
+  MessageSquare,
+  Star
 } from 'lucide-react';
 
 const TOP_SERVIDORES = [
@@ -70,43 +71,38 @@ const ULTIMAS_NOTICIAS = [
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-pixel-bg flex flex-col justify-between">
+    <div className="min-h-screen bg-pixel-bg text-pixel-dark flex flex-col justify-between">
       <div>
         <Header />
 
-        <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
-          {/* HERO BANNER */}
-          <section className="relative rounded-xl border-4 border-black bg-gradient-to-r from-pixel-purple-dark via-pixel-card to-pixel-blue-dark p-6 sm:p-10 retro-shadow-lg overflow-hidden">
-            <div className="absolute top-0 right-0 -mt-8 -mr-8 w-64 h-64 bg-pixel-cyan/10 rounded-full blur-3xl pointer-events-none" />
-            
-            <div className="relative z-10 max-w-2xl space-y-4">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-pixel-cyan text-black font-extrabold text-xs uppercase tracking-wider border border-black retro-shadow-sm">
-                <Sparkles className="w-4 h-4 fill-black" /> Portal da Comunidade
+        <main className="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+          {/* HERO BANNER - AMARALO & AZUL */}
+          <section className="relative rounded-3xl border-3 border-pixel-dark bg-gradient-to-r from-pixel-yellow via-amber-300 to-pixel-yellow p-8 sm:p-12 shadow-[6px_6px_0px_#0f172a] overflow-hidden">
+            <div className="relative z-10 max-w-2xl space-y-5">
+              <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-white text-pixel-dark font-black text-xs uppercase tracking-wider border-2 border-pixel-dark shadow-[2px_2px_0px_#0f172a]">
+                <Sparkles className="w-4 h-4 text-pixel-blue" /> Portal da Comunidade
               </span>
 
-              <h1 className="text-3xl sm:text-5xl font-black uppercase text-white tracking-tight leading-none drop-shadow-[2px_2px_0px_rgba(0,0,0,1)]">
-                Encontre o melhor <span className="text-transparent bg-clip-text bg-gradient-to-r from-pixel-cyan to-pixel-purple">Habbo Pirata</span> para jogar
+              <h1 className="text-4xl sm:text-6xl font-black uppercase text-pixel-dark tracking-tight leading-none">
+                Encontre o melhor <span className="text-pixel-blue underline decoration-wavy decoration-pixel-dark">Habbo Pirata</span>
               </h1>
 
-              <p className="text-zinc-300 text-sm sm:text-base font-medium">
+              <p className="text-pixel-dark font-semibold text-base sm:text-lg leading-relaxed">
                 Acompanhe o ranking oficial de servidores, novidades da comunidade, bate-papo no Discord e em breve nossa rádio 24 horas ao vivo.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-4">
-                <Link
-                  href="/servidores"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-pixel-purple to-pixel-blue hover:from-pixel-purple-dark hover:to-pixel-blue-dark text-white font-black text-sm px-5 py-3 rounded border-2 border-black retro-shadow hover:retro-shadow-lg transition-all"
-                >
-                  <Trophy className="w-5 h-5 text-amber-400" />
+                <Link href="/servidores" className="retro-btn-blue px-6 py-3.5 text-sm flex items-center gap-2">
+                  <Trophy className="w-5 h-5 text-pixel-yellow" />
                   Explorar Top Lista
                 </Link>
                 <a
                   href="https://discord.gg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 text-zinc-100 font-bold text-sm px-5 py-3 rounded border-2 border-black retro-shadow transition-all"
+                  className="bg-white hover:bg-slate-50 text-pixel-dark font-black text-sm px-6 py-3.5 rounded-full border-2 border-pixel-dark shadow-[3px_3px_0px_#0f172a] hover:shadow-[5px_5px_0px_#0f172a] transition-all flex items-center gap-2"
                 >
-                  <MessageSquare className="w-5 h-5 text-pixel-cyan" />
+                  <MessageSquare className="w-5 h-5 text-pixel-blue" />
                   Comunidade Discord
                 </a>
               </div>
@@ -115,16 +111,16 @@ export default function HomePage() {
 
           {/* SEÇÃO TOP LISTA DE SERVIDORES */}
           <section className="space-y-6">
-            <div className="flex items-center justify-between border-b-2 border-zinc-800 pb-3">
+            <div className="flex items-center justify-between border-b-2 border-slate-200 pb-4">
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-amber-500 border-2 border-black rounded retro-shadow text-black">
-                  <Trophy className="w-5 h-5" />
+                <div className="p-3 bg-pixel-yellow border-2 border-pixel-dark rounded-2xl shadow-[3px_3px_0px_#0f172a]">
+                  <Trophy className="w-6 h-6 text-pixel-dark" />
                 </div>
                 <div>
-                  <h2 className="text-xl font-black uppercase tracking-wider text-white">
+                  <h2 className="text-2xl font-black uppercase tracking-wider text-pixel-dark">
                     TOP 3 Habbos Piratas
                   </h2>
-                  <p className="text-xs text-zinc-400 font-mono">
+                  <p className="text-xs text-slate-500 font-semibold">
                     Servidores com maior pontuação e votos da comunidade neste mês.
                   </p>
                 </div>
@@ -132,42 +128,45 @@ export default function HomePage() {
 
               <Link
                 href="/servidores"
-                className="text-xs font-bold text-pixel-cyan hover:underline flex items-center gap-1"
+                className="retro-btn-yellow px-4 py-2 text-xs flex items-center gap-1.5"
               >
-                Ver ranking completo <ArrowRight className="w-3.5 h-3.5" />
+                Ver ranking <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {TOP_SERVIDORES.map((server) => (
                 <article
                   key={server.id}
-                  className="bg-pixel-card border-2 border-black rounded-lg overflow-hidden retro-shadow flex flex-col justify-between hover:-translate-y-1 transition-transform"
+                  className="retro-card overflow-hidden flex flex-col justify-between hover:-translate-y-1.5 transition-transform"
                 >
                   <div>
-                    <div className="relative h-36 bg-zinc-950 border-b-2 border-black">
+                    <div className="relative h-40 bg-slate-100 border-b-2 border-pixel-dark">
                       <img
                         src={server.bannerUrl}
                         alt={server.name}
                         className="w-full h-full object-cover"
                       />
-                      <span className="absolute top-3 left-3 bg-amber-400 text-black font-black text-xs px-2.5 py-1 rounded border border-black retro-shadow-sm flex items-center gap-1">
-                        #{server.rank} TOP
+                      <span className="absolute top-3 left-3 bg-pixel-yellow text-pixel-dark font-black text-xs px-3 py-1 rounded-full border-2 border-pixel-dark shadow-[2px_2px_0px_#0f172a] flex items-center gap-1">
+                        <Star className="w-3.5 h-3.5 fill-pixel-dark" /> #{server.rank} TOP
                       </span>
-                      <div className="absolute -bottom-4 right-4 bg-pixel-bg border-2 border-black rounded-full p-1 retro-shadow-sm">
-                        <HabboAvatar username={server.owner} headOnly size="m" className="w-9 h-9" />
+                      <div className="absolute -bottom-5 right-5 bg-white border-2 border-pixel-dark rounded-2xl p-1 shadow-[2px_2px_0px_#0f172a]">
+                        <HabboAvatar username={server.owner} headOnly size="m" className="w-10 h-10" />
                       </div>
                     </div>
 
-                    <div className="p-5 space-y-3">
-                      <h3 className="text-lg font-extrabold text-white">{server.name}</h3>
-                      <p className="text-xs text-zinc-400 leading-relaxed line-clamp-2">
+                    <div className="p-6 space-y-4">
+                      <h3 className="text-xl font-black text-pixel-dark">{server.name}</h3>
+                      <p className="text-xs text-slate-600 font-medium leading-relaxed line-clamp-2">
                         {server.description}
                       </p>
 
-                      <div className="flex flex-wrap gap-1.5">
+                      <div className="flex flex-wrap gap-2">
                         {server.tags.map((tag) => (
-                          <span key={tag} className="text-[10px] font-mono bg-zinc-900 text-pixel-cyan px-2 py-0.5 rounded border border-zinc-800">
+                          <span
+                            key={tag}
+                            className="text-[10px] font-bold bg-slate-100 text-pixel-blue px-2.5 py-1 rounded-full border border-slate-300"
+                          >
                             {tag}
                           </span>
                         ))}
@@ -175,12 +174,12 @@ export default function HomePage() {
                     </div>
                   </div>
 
-                  <div className="p-4 bg-zinc-950/60 border-t border-zinc-800 flex items-center justify-between text-xs font-mono">
-                    <span className="text-emerald-400 font-bold flex items-center gap-1">
-                      <Users className="w-3.5 h-3.5" /> {server.onlineCount} Online
+                  <div className="p-4 bg-slate-50 border-t-2 border-pixel-dark flex items-center justify-between text-xs font-bold">
+                    <span className="text-emerald-600 flex items-center gap-1.5">
+                      <Users className="w-4 h-4" /> {server.onlineCount} Online
                     </span>
-                    <span className="text-pixel-purple font-bold flex items-center gap-1">
-                      <ThumbsUp className="w-3.5 h-3.5" /> {server.votes} Votos
+                    <span className="text-pixel-blue flex items-center gap-1.5">
+                      <ThumbsUp className="w-4 h-4" /> {server.votes} Votos
                     </span>
                   </div>
                 </article>
@@ -191,16 +190,16 @@ export default function HomePage() {
           {/* SEÇÃO DUPLA: NOTÍCIAS & WIDGET RÁDIO */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
             <section className="lg:col-span-8 space-y-6">
-              <div className="flex items-center justify-between border-b-2 border-zinc-800 pb-3">
+              <div className="flex items-center justify-between border-b-2 border-slate-200 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-pixel-purple border-2 border-black rounded retro-shadow text-white">
-                    <Newspaper className="w-5 h-5" />
+                  <div className="p-3 bg-pixel-blue text-white border-2 border-pixel-dark rounded-2xl shadow-[3px_3px_0px_#0f172a]">
+                    <Newspaper className="w-6 h-6" />
                   </div>
-                  <h2 className="text-xl font-black uppercase tracking-wider text-white">
+                  <h2 className="text-2xl font-black uppercase tracking-wider text-pixel-dark">
                     Últimas Notícias
                   </h2>
                 </div>
-                <Link href="/noticias" className="text-xs font-bold text-pixel-cyan hover:underline">
+                <Link href="/noticias" className="text-xs font-bold text-pixel-blue hover:underline">
                   Ver todas
                 </Link>
               </div>
@@ -209,25 +208,25 @@ export default function HomePage() {
                 {ULTIMAS_NOTICIAS.map((news) => (
                   <article
                     key={news.id}
-                    className="bg-pixel-card border-2 border-black rounded-lg p-5 retro-shadow flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
+                    className="retro-card p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4"
                   >
-                    <div className="space-y-1">
-                      <div className="flex items-center gap-2 text-xs font-mono text-zinc-400">
-                        <span className="text-pixel-cyan font-bold">{news.category}</span>
+                    <div className="space-y-1.5">
+                      <div className="flex items-center gap-2 text-xs font-bold text-slate-400">
+                        <span className="text-pixel-blue font-black uppercase">{news.category}</span>
                         <span>•</span>
                         <span>{news.date}</span>
                       </div>
-                      <h3 className="text-base font-bold text-white hover:text-pixel-cyan transition-colors">
+                      <h3 className="text-lg font-black text-pixel-dark hover:text-pixel-blue transition-colors">
                         <Link href={`/noticias/${news.id}`}>{news.title}</Link>
                       </h3>
-                      <p className="text-xs text-zinc-400 line-clamp-1">{news.summary}</p>
+                      <p className="text-xs text-slate-600 font-medium line-clamp-1">{news.summary}</p>
                     </div>
 
                     <Link
                       href={`/noticias/${news.id}`}
-                      className="shrink-0 bg-zinc-900 hover:bg-zinc-800 text-zinc-200 text-xs font-bold px-3 py-2 rounded border border-black retro-shadow-sm"
+                      className="shrink-0 retro-btn-yellow px-4 py-2 text-xs"
                     >
-                      Ler mais
+                      Ler matéria
                     </Link>
                   </article>
                 ))}
@@ -235,27 +234,29 @@ export default function HomePage() {
             </section>
 
             <aside className="lg:col-span-4 space-y-6">
-              <div className="bg-pixel-card border-2 border-black rounded-lg p-5 retro-shadow space-y-4">
-                <div className="flex items-center gap-3 border-b border-zinc-800 pb-3">
-                  <div className="p-2 bg-pixel-blue border border-black rounded text-white">
-                    <Radio className="w-5 h-5" />
+              <div className="retro-card p-6 space-y-5 bg-gradient-to-b from-white to-slate-50">
+                <div className="flex items-center gap-3 border-b-2 border-slate-200 pb-4">
+                  <div className="p-3 bg-pixel-yellow border-2 border-pixel-dark rounded-2xl shadow-[2px_2px_0px_#0f172a]">
+                    <Radio className="w-6 h-6 text-pixel-dark animate-bounce" />
                   </div>
                   <div>
-                    <h3 className="text-base font-black text-white uppercase">Rádio Pixelizados</h3>
-                    <span className="text-[10px] font-mono text-amber-400 uppercase font-bold">Em breve em 24h</span>
+                    <h3 className="text-lg font-black text-pixel-dark uppercase leading-none">Rádio Pixelizados</h3>
+                    <span className="text-[10px] font-bold text-pixel-blue uppercase tracking-wider">Em breve 24h</span>
                   </div>
                 </div>
 
-                <p className="text-xs text-zinc-400 leading-relaxed">
-                  Estamos preparando a melhor programação musical com os melhores DJs da comunidade. Fique atento!
+                <p className="text-xs text-slate-600 font-medium leading-relaxed">
+                  Acompanhe a melhor programação ao vivo com os locutores mais tops da comunidade habbiana.
                 </p>
 
-                <div className="p-3 bg-zinc-950 rounded border border-zinc-800 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <HabboAvatar username="DJ_Bobba" headOnly size="s" className="w-7 h-7" />
-                    <span className="text-xs font-bold text-zinc-300">Locutor: AutoDJ</span>
+                <div className="p-3.5 bg-white rounded-2xl border-2 border-pixel-dark shadow-[2px_2px_0px_#0f172a] flex items-center justify-between">
+                  <div className="flex items-center gap-3">
+                    <HabboAvatar username="DJ_Bobba" headOnly size="s" className="w-8 h-8" />
+                    <span className="text-xs font-bold text-pixel-dark">Locutor: AutoDJ</span>
                   </div>
-                  <span className="text-[10px] font-mono bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded">OFFLINE</span>
+                  <span className="text-[10px] font-black bg-slate-200 text-slate-600 px-2.5 py-1 rounded-full border border-slate-300">
+                    OFFLINE
+                  </span>
                 </div>
               </div>
             </aside>
@@ -267,4 +268,3 @@ export default function HomePage() {
     </div>
   );
 }
-// Atualizado em 2026
